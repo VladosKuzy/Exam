@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagazineModel", "MagazineMo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagazineServiceDAL", "MagazineServiceDAL\MagazineServiceDAL.csproj", "{4844EA4F-0124-4E83-98D2-8F8CEBA2E0E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagazineServiceImplementList", "MagazineServiceImplementList\MagazineServiceImplementList.csproj", "{4689AE1F-5245-4458-8BDC-76DEA42B5244}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagazineView", "MagazineView\MagazineView.csproj", "{98B14A7C-F561-47ED-88CF-9E20B578C6EB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagazineServiceImplementDataBase", "MagazineServiceImplementDataBase\MagazineServiceImplementDataBase.csproj", "{D003471F-5599-4EA0-9B3A-F21B79789DBD}"
@@ -27,10 +25,6 @@ Global
 		{4844EA4F-0124-4E83-98D2-8F8CEBA2E0E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4844EA4F-0124-4E83-98D2-8F8CEBA2E0E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4844EA4F-0124-4E83-98D2-8F8CEBA2E0E4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4689AE1F-5245-4458-8BDC-76DEA42B5244}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4689AE1F-5245-4458-8BDC-76DEA42B5244}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4689AE1F-5245-4458-8BDC-76DEA42B5244}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4689AE1F-5245-4458-8BDC-76DEA42B5244}.Release|Any CPU.Build.0 = Release|Any CPU
 		{98B14A7C-F561-47ED-88CF-9E20B578C6EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{98B14A7C-F561-47ED-88CF-9E20B578C6EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98B14A7C-F561-47ED-88CF-9E20B578C6EB}.Release|Any CPU.ActiveCfg = Release|Any CPU

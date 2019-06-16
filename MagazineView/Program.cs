@@ -1,10 +1,6 @@
 ﻿using MagazineServiceDAL.Interfaces;
 using MagazineServiceImplementDataBase.Implementations;
-using MagazineServiceImplementList.Implements;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Unity;
 using Unity.Lifetime;
@@ -34,7 +30,8 @@ namespace MagazineView
             currentContainer.RegisterType<IArticleServiceDAL, ArticleServiceDB>(
                new HierarchicalLifetimeManager());
 
-            currentContainer.RegisterType<IReportServiceDAL, ReportServiceDB>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<IReportServiceDAL, ReportServiceDB>(
+                new HierarchicalLifetimeManager());
 
             return currentContainer;
         }

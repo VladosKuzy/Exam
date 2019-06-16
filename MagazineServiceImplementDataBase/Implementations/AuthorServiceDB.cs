@@ -4,9 +4,12 @@ using MagazineServiceDAL.Interfaces;
 using MagazineServiceDAL.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace MagazineServiceImplementDataBase.Implementations
 {
@@ -55,6 +58,7 @@ namespace MagazineServiceImplementDataBase.Implementations
             }
         }
 
+        
         public void DeleteElement(int id)
         {
             using (var transaction = context.Database.BeginTransaction())
@@ -111,6 +115,7 @@ namespace MagazineServiceImplementDataBase.Implementations
             }).ToList();
         }
 
+        
         public void UpdateElement(AuthorBindingModel model)
         {
             using (var transaction = context.Database.BeginTransaction())
@@ -139,6 +144,51 @@ namespace MagazineServiceImplementDataBase.Implementations
                     transaction.Rollback();
                     throw;
                 }
+            }
+        }
+
+        public void CreateXMLFile(string fileName)
+        {
+            AuthorModel[] authors = context.Authors.ToArray();
+
+            XmlSerializer formatter = new XmlSerializer(typeof(AuthorModel[]));
+
+            using (FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate))
+            {
+                formatter.Serialize(fs, authors);
+            }
+        }
+
+        public AuthorModel[] GetXMLFile(string fileName)
+        {
+            XmlSerializer formatter = new XmlSerializer(typeof(AuthorModel[]));
+
+            using (FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate))
+            {
+                return (AuthorModel[])formatter.Deserialize(fs);
+            }
+        }
+
+
+        public void CreateJSONFile(string fileName)
+        {
+            AuthorModel[] authors = context.Authors.ToArray();
+
+            DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(AuthorModel[]));
+
+            using (FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate))
+            {
+                jsonFormatter.WriteObject(fs, authors);
+            }
+        }
+
+        public AuthorModel[] GetJSONFile(string fileName)
+        {
+            DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(AuthorModel[]));
+
+            using (FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate))
+            {
+                return (AuthorModel[])jsonFormatter.ReadObject(fs);
             }
         }
     }

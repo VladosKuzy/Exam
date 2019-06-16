@@ -11,7 +11,7 @@ namespace MagazineServiceDAL.ViewModel
     {
         public int Id { get; set; }
 
-        public int AuthorId { get; set; }
+        public int ArticleId { get; set; }
 
         [DisplayName("Имя автора")]
         public string AuthorName { get; set; }

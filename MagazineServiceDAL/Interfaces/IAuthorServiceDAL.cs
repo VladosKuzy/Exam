@@ -1,4 +1,5 @@
-﻿using MagazineServiceDAL.BindingModel;
+﻿using MagazineModel;
+using MagazineServiceDAL.BindingModel;
 using MagazineServiceDAL.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,21 @@ namespace MagazineServiceDAL.Interfaces
     public interface IAuthorServiceDAL
     {
         List<AuthorViewModel> GetList();
+
         AuthorViewModel GetElement(int id);
+
         void AddElement(AuthorBindingModel model);
+
         void UpdateElement(AuthorBindingModel model);
+
         void DeleteElement(int id);
+
+        void CreateXMLFile(string fileName);
+
+        AuthorModel[] GetXMLFile(string fileName);
+
+        void CreateJSONFile(string fileName);
+
+        AuthorModel[] GetJSONFile(string fileName);
     }
 }

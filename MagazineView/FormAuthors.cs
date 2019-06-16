@@ -101,5 +101,11 @@ namespace MagazineView
                 }
             }
         }
+
+        private void buttonCreateFile_Click(object sender, EventArgs e)
+        {
+            var form = Container.Resolve<FormAuthorsSerialization>();
+            form.ShowDialog();
+        }
     }
 }

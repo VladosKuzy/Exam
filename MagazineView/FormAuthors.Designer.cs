@@ -32,6 +32,7 @@
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonChange = new System.Windows.Forms.Button();
+            this.buttonCreateFile = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,11 +75,22 @@
             this.buttonChange.UseVisualStyleBackColor = true;
             this.buttonChange.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
+            // buttonCreateFile
+            // 
+            this.buttonCreateFile.Location = new System.Drawing.Point(451, 394);
+            this.buttonCreateFile.Name = "buttonCreateFile";
+            this.buttonCreateFile.Size = new System.Drawing.Size(181, 44);
+            this.buttonCreateFile.TabIndex = 4;
+            this.buttonCreateFile.Text = "Сериализировать";
+            this.buttonCreateFile.UseVisualStyleBackColor = true;
+            this.buttonCreateFile.Click += new System.EventHandler(this.buttonCreateFile_Click);
+            // 
             // FormAuthors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(648, 450);
+            this.Controls.Add(this.buttonCreateFile);
             this.Controls.Add(this.buttonChange);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonAdd);
@@ -97,5 +109,6 @@
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonChange;
+        private System.Windows.Forms.Button buttonCreateFile;
     }
 }

@@ -4,9 +4,12 @@ using MagazineServiceDAL.Interfaces;
 using MagazineServiceDAL.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace MagazineServiceImplementDataBase.Implementations
 {
@@ -132,5 +135,51 @@ namespace MagazineServiceImplementDataBase.Implementations
                 }
             }
         }
+
+        public void CreateXMLFile(string fileName)
+        {
+            ArticleModel[] articles = context.Articles.ToArray();
+
+            XmlSerializer formatter = new XmlSerializer(typeof(ArticleModel[]));
+
+            using (FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate))
+            {
+                formatter.Serialize(fs, articles);
+            }
+        }
+
+        public ArticleModel[] GetXMLFile(string fileName)
+        {
+            XmlSerializer formatter = new XmlSerializer(typeof(ArticleModel[]));
+
+            using (FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate))
+            {
+                return (ArticleModel[])formatter.Deserialize(fs);
+            }
+        }
+
+
+        public void CreateJSONFile(string fileName)
+        {
+            ArticleModel[] articles = context.Articles.ToArray();
+
+            DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(ArticleModel[]));
+
+            using (FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate))
+            {
+                jsonFormatter.WriteObject(fs, articles);
+            }
+        }
+
+        public ArticleModel[] GetJSONFile(string fileName)
+        {
+            DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(ArticleModel[]));
+
+            using (FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate))
+            {
+                return (ArticleModel[])jsonFormatter.ReadObject(fs);
+            }
+        }
+
     }
 }

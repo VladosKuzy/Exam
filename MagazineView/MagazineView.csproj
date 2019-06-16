@@ -76,6 +76,12 @@
     <Compile Include="FormArticles.Designer.cs">
       <DependentUpon>FormArticles.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormArticlesSerialization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormArticlesSerialization.Designer.cs">
+      <DependentUpon>FormArticlesSerialization.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAuthor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,12 @@
     </Compile>
     <Compile Include="FormAuthors.Designer.cs">
       <DependentUpon>FormAuthors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAuthorsSerialization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAuthorsSerialization.Designer.cs">
+      <DependentUpon>FormAuthorsSerialization.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
@@ -114,11 +126,17 @@
     <EmbeddedResource Include="FormArticles.resx">
       <DependentUpon>FormArticles.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormArticlesSerialization.resx">
+      <DependentUpon>FormArticlesSerialization.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAuthor.resx">
       <DependentUpon>FormAuthor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAuthors.resx">
       <DependentUpon>FormAuthors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAuthorsSerialization.resx">
+      <DependentUpon>FormAuthorsSerialization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
@@ -164,10 +182,6 @@
     <ProjectReference Include="..\MagazineServiceImplementDataBase\MagazineServiceImplementDataBase.csproj">
       <Project>{d003471f-5599-4ea0-9b3a-f21b79789dbd}</Project>
       <Name>MagazineServiceImplementDataBase</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MagazineServiceImplementList\MagazineServiceImplementList.csproj">
-      <Project>{4689ae1f-5245-4458-8bdc-76dea42b5244}</Project>
-      <Name>MagazineServiceImplementList</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
