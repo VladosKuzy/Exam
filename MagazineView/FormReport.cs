@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Unity;
@@ -27,17 +28,26 @@ namespace MagazineView
             this.report = report;
         }
 
-        private void buttonCreateList_Click(object sender, EventArgs e)
+        private async void buttonCreateList_Click(object sender, EventArgs e)
         {
+            Task task = null;
+
+            if (!textBoxFrom.Text.Equals("") && !textBoxTo.Equals(""))
+            {
+                task = Task.Run(() => list = report.GetLoadDataReport(new ReportBindingModel
+                {
+                    DateTo = Convert.ToDateTime(textBoxTo.Text),
+                    DateFrom = Convert.ToDateTime(textBoxFrom.Text)
+                }));
+            }
+
             try
             {
                 if (!textBoxFrom.Text.Equals("") && !textBoxTo.Equals(""))
                 {
-                    list = report.GetLoadDataReport(new ReportBindingModel
-                    {
-                        DateTo = Convert.ToDateTime(textBoxTo.Text),
-                        DateFrom = Convert.ToDateTime(textBoxFrom.Text)
-                    });
+
+                    await task;
+                    
                     MessageBox.Show("Сохранение прошло успешно", "Сообщение",
                MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -51,7 +61,7 @@ namespace MagazineView
             }
         }
 
-        private void buttonSave_Click(object sender, EventArgs e)
+        private async void buttonSave_Click(object sender, EventArgs e)
         {
             using (SaveFileDialog saveFile = new SaveFileDialog()
             {
@@ -61,9 +71,12 @@ namespace MagazineView
             {
                 if (saveFile.ShowDialog() == DialogResult.OK)
                 {
+                    Task task = Task.Run(() => report.CreateReport(list, saveFile.FileName));
+
                     try
                     {
-                        report.CreateReport(list, saveFile.FileName);
+                        await task;
+                       
                         MessageBox.Show("Отчёт успешно создан", "Информация", MessageBoxButtons.OK);
                     }
                     catch (Exception ex)
@@ -74,5 +87,7 @@ namespace MagazineView
                 }
             }
         }
+
+        
     }
 }
