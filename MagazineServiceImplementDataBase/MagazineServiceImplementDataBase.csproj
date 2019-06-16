@@ -36,6 +36,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -49,10 +52,11 @@
   <ItemGroup>
     <Compile Include="Implementations\ArticleServiceDB.cs" />
     <Compile Include="Implementations\AuthorServiceDB.cs" />
+    <Compile Include="Implementations\ReportServiceDB.cs" />
     <Compile Include="MagazineDbContext.cs" />
-    <Compile Include="Migrations\201906152039047_FirstMigration.cs" />
-    <Compile Include="Migrations\201906152039047_FirstMigration.Designer.cs">
-      <DependentUpon>201906152039047_FirstMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201906152159218_vlad_0001.cs" />
+    <Compile Include="Migrations\201906152159218_vlad_0001.Designer.cs">
+      <DependentUpon>201906152159218_vlad_0001.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,8 +76,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201906152039047_FirstMigration.resx">
-      <DependentUpon>201906152039047_FirstMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906152159218_vlad_0001.resx">
+      <DependentUpon>201906152159218_vlad_0001.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -32,5 +32,11 @@ namespace MagazineView
             var form = Container.Resolve<FormArticles>();
             form.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var form = Container.Resolve<FormReport>();
+            form.ShowDialog();
+        }
     }
 }

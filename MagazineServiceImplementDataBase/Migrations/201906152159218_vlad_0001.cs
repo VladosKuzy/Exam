@@ -3,7 +3,7 @@ namespace MagazineServiceImplementDataBase.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class FirstMigration : DbMigration
+    public partial class vlad_0001 : DbMigration
     {
         public override void Up()
         {

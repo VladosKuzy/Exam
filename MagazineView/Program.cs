@@ -34,6 +34,8 @@ namespace MagazineView
             currentContainer.RegisterType<IArticleServiceDAL, ArticleServiceDB>(
                new HierarchicalLifetimeManager());
 
+            currentContainer.RegisterType<IReportServiceDAL, ReportServiceDB>(new HierarchicalLifetimeManager());
+
             return currentContainer;
         }
     }
