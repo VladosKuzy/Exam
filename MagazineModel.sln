@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagazineServiceImplementLis
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagazineView", "MagazineView\MagazineView.csproj", "{98B14A7C-F561-47ED-88CF-9E20B578C6EB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagazineServiceImplementDataBase", "MagazineServiceImplementDataBase\MagazineServiceImplementDataBase.csproj", "{D003471F-5599-4EA0-9B3A-F21B79789DBD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{98B14A7C-F561-47ED-88CF-9E20B578C6EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98B14A7C-F561-47ED-88CF-9E20B578C6EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98B14A7C-F561-47ED-88CF-9E20B578C6EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D003471F-5599-4EA0-9B3A-F21B79789DBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D003471F-5599-4EA0-9B3A-F21B79789DBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D003471F-5599-4EA0-9B3A-F21B79789DBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D003471F-5599-4EA0-9B3A-F21B79789DBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

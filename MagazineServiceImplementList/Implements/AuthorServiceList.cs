@@ -100,6 +100,7 @@ namespace MagazineServiceImplementList.Implements
             author.Email = model.Email;
             author.WorkShop = model.WorkShop;
             author.ArticleId = model.ArticleId;
+            
         }
     }
 }

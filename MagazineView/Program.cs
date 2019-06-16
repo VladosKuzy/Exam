@@ -1,4 +1,5 @@
 ﻿using MagazineServiceDAL.Interfaces;
+using MagazineServiceImplementDataBase.Implementations;
 using MagazineServiceImplementList.Implements;
 using System;
 using System.Collections.Generic;
@@ -27,10 +28,10 @@ namespace MagazineView
         {
             var currentContainer = new UnityContainer();
 
-            currentContainer.RegisterType<IAuthorServiceDAL, AuthorServiceList>(
+            currentContainer.RegisterType<IAuthorServiceDAL, AuthorServiceDB>(
                 new HierarchicalLifetimeManager());
 
-            currentContainer.RegisterType<IArticleServiceDAL, ArticleServiceList>(
+            currentContainer.RegisterType<IArticleServiceDAL, ArticleServiceDB>(
                new HierarchicalLifetimeManager());
 
             return currentContainer;

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EE08C76F-3D4B-418D-9596-16B53068CC95}</ProjectGuid>
+    <ProjectGuid>{D003471F-5599-4EA0-9B3A-F21B79789DBD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MagazineModel</RootNamespace>
-    <AssemblyName>MagazineModel</AssemblyName>
+    <RootNamespace>MagazineServiceImplementDataBase</RootNamespace>
+    <AssemblyName>MagazineServiceImplementDataBase</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -47,13 +47,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArticleModel.cs" />
-    <Compile Include="AuthorModel.cs" />
+    <Compile Include="Implementations\ArticleServiceDB.cs" />
+    <Compile Include="Implementations\AuthorServiceDB.cs" />
+    <Compile Include="MagazineDbContext.cs" />
+    <Compile Include="Migrations\201906152039047_FirstMigration.cs" />
+    <Compile Include="Migrations\201906152039047_FirstMigration.Designer.cs">
+      <DependentUpon>201906152039047_FirstMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MagazineModel\MagazineModel.csproj">
+      <Project>{ee08c76f-3d4b-418d-9596-16b53068cc95}</Project>
+      <Name>MagazineModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MagazineServiceDAL\MagazineServiceDAL.csproj">
+      <Project>{4844ea4f-0124-4e83-98d2-8f8ceba2e0e4}</Project>
+      <Name>MagazineServiceDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201906152039047_FirstMigration.resx">
+      <DependentUpon>201906152039047_FirstMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

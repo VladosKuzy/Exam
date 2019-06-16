@@ -32,7 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
@@ -141,6 +148,10 @@
     <ProjectReference Include="..\MagazineServiceDAL\MagazineServiceDAL.csproj">
       <Project>{4844ea4f-0124-4e83-98d2-8f8ceba2e0e4}</Project>
       <Name>MagazineServiceDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MagazineServiceImplementDataBase\MagazineServiceImplementDataBase.csproj">
+      <Project>{d003471f-5599-4ea0-9b3a-f21b79789dbd}</Project>
+      <Name>MagazineServiceImplementDataBase</Name>
     </ProjectReference>
     <ProjectReference Include="..\MagazineServiceImplementList\MagazineServiceImplementList.csproj">
       <Project>{4689ae1f-5245-4458-8bdc-76dea42b5244}</Project>

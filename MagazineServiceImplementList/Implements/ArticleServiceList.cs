@@ -55,7 +55,7 @@ namespace MagazineServiceImplementList.Implements
 
         public ArticleViewModel GetElement(int id)
         {
-            ArticleModel article = data.Articles
+            var article = data.Articles
                 .Contains(data.Articles.FirstOrDefault(r => r.Id == id))
                 ? data.Articles.FirstOrDefault(r => r.Id == id)
                 : throw new Exception("Error");
